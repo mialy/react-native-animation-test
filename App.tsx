@@ -78,28 +78,19 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Animated.View entering={SlideInRight}>
-            <Section title="Step One">
-              Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-              screen and then come back to see your edits.
-            </Section>
+            <Section title="#SlideInRight" />
           </Animated.View>
           <Animated.View entering={SlideInDown}>
-            <Section title="See Your Changes">
-              <ReloadInstructions />
-            </Section>
+            <Section title="#SlideInDown" />
           </Animated.View>
           <Animated.View entering={SlideInLeft}>
-            <Section title="Debug">
-              <DebugInstructions />
-            </Section>
+            <Section title="#SlideInLeft" />
           </Animated.View>
           <Animated.View entering={SlideInUp}>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
+            <Section title="#SlideInUp" />
           </Animated.View>
           <Animated.View entering={ZoomInDown}>
-            <LearnMoreLinks />
+            <Section title="#ZoomInDown" />
           </Animated.View>
         </View>
       </ScrollView>
@@ -109,11 +100,11 @@ const App = () => {
 
 const styles = StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    marginTop: 8,
+    paddingHorizontal: 20,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: '600',
   },
   sectionDescription: {
