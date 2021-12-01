@@ -27,6 +27,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import Animated, { SlideInDown, SlideInLeft, SlideInRight, SlideInUp, ZoomInDown, ZoomInEasyUp } from 'react-native-reanimated';
+
 const Section: React.FC<{
   title: string;
 }> = ({children, title}) => {
@@ -68,25 +70,37 @@ const App = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        <Animated.View entering={ZoomInEasyUp}>
+          <Header />
+        </Animated.View>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
+          <Animated.View entering={SlideInRight}>
+            <Section title="Step One">
+              Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+              screen and then come back to see your edits.
+            </Section>
+          </Animated.View>
+          <Animated.View entering={SlideInDown}>
+            <Section title="See Your Changes">
+              <ReloadInstructions />
+            </Section>
+          </Animated.View>
+          <Animated.View entering={SlideInLeft}>
+            <Section title="Debug">
+              <DebugInstructions />
+            </Section>
+          </Animated.View>
+          <Animated.View entering={SlideInUp}>
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <LearnMoreLinks />
+          </Animated.View>
+          <Animated.View entering={ZoomInDown}>
+            <LearnMoreLinks />
+          </Animated.View>
         </View>
       </ScrollView>
     </SafeAreaView>
