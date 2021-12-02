@@ -70,26 +70,26 @@ const App = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Animated.View entering={ZoomInEasyUp}>
+        <Animated.View entering={ZoomInEasyUp.duration(1500)}>
           <Header />
         </Animated.View>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Animated.View entering={SlideInRight}>
+          <Animated.View entering={SlideInRight.duration(3000).delay(500)}>
             <Section title="#SlideInRight" />
           </Animated.View>
-          <Animated.View entering={SlideInDown}>
+          <Animated.View entering={SlideInDown.duration(3000).delay(1000)}>
             <Section title="#SlideInDown" />
           </Animated.View>
-          <Animated.View entering={SlideInLeft}>
+          <Animated.View entering={SlideInLeft.duration(3000).delay(1500)}>
             <Section title="#SlideInLeft" />
           </Animated.View>
-          <Animated.View entering={SlideInUp}>
+          <Animated.View entering={SlideInUp.duration(3000).delay(2000)}>
             <Section title="#SlideInUp" />
           </Animated.View>
-          <Animated.View entering={ZoomInDown}>
+          <Animated.View entering={ZoomInDown.duration(3000).delay(2500)}>
             <Section title="#ZoomInDown" />
           </Animated.View>
         </View>
